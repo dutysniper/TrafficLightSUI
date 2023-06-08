@@ -16,7 +16,7 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            VStack(spacing: 40) {
+            VStack(spacing: 15) {
                 LightView(color: .red)
                     .opacity(currentColor == .red ? lightOn : lightOff)
                 LightView(color: .yellow)
@@ -29,10 +29,18 @@ struct ContentView: View {
             Button(action: changeLight) {
                 Text(buttonName)
                     .foregroundColor(.white)
-                    .padding(15)
+                    .padding(
+                        EdgeInsets(
+                            top: 15,
+                            leading: 40,
+                            bottom: 15,
+                            trailing: 40
+                        )
+                    )
                     .background(Color.blue)
                     .cornerRadius(20)
             }
+            .frame(width: 150)
         }
         .padding(EdgeInsets(top: 30, leading: 16, bottom: 16, trailing: 16))
     }
