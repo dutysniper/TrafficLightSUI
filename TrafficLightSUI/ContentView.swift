@@ -11,23 +11,20 @@ struct ContentView: View {
     private let lightOff = 0.3
     private let lightOn = 1.0
     
-    @State private var changeColor: ChangeColor = .red
-    @State private var redLightOpacity = 0.3
-    @State private var yellowLightOpacity = 0.3
-    @State private var greenLightOpacity = 0.3
+    @State private var currentColor: ChangeColor = .green
     @State private var buttonName = "START"
     
     var body: some View {
         VStack {
             VStack(spacing: 40) {
                 LightView(color: .red)
-                    .opacity(redLightOpacity)
+                    .opacity(currentColor == .red ? lightOn : lightOff)
                 LightView(color: .yellow)
-                    .opacity(yellowLightOpacity)
+                    .opacity(currentColor == .yellow ? lightOn : lightOff)
                 LightView(color: .green)
-                    .opacity(greenLightOpacity)
+                    .opacity(currentColor == .green && buttonName == "NEXT" ? lightOn : lightOff)
             }
-            .animation(.easeInOut(duration: 0.8), value: changeColor)
+            .animation(.easeInOut(duration: 0.8), value: currentColor)
             Spacer()
             Button(action: changeLight) {
                 Text(buttonName)
@@ -44,19 +41,13 @@ struct ContentView: View {
         if buttonName == "START" {
             buttonName = "NEXT"
         }
-        switch changeColor {
+        switch currentColor {
         case .red:
-            greenLightOpacity = lightOff
-            redLightOpacity = lightOn
-            changeColor = .yellow
+            currentColor = .yellow
         case .yellow:
-            redLightOpacity = lightOff
-            yellowLightOpacity = lightOn
-            changeColor = .green
+            currentColor = .green
         case .green:
-            yellowLightOpacity = lightOff
-            greenLightOpacity = lightOn
-            changeColor = .red
+            currentColor = .red
         }
     }
 }
