@@ -12,8 +12,6 @@ struct LightView: View {
     
     var body: some View {
         let size = 0.23 * UIScreen.main.bounds.height
-        let xOffset = (UIScreen.main.bounds.width - size) / 2
-        let yOffset = (UIScreen.main.bounds.height - size) / 2
         
         GeometryReader { geometry in
             ZStack {
@@ -21,7 +19,7 @@ struct LightView: View {
                     .frame(width: size, height: size)
                     .foregroundColor(color)
                     .overlay(Circle().stroke(lineWidth: 2))
-                    .position(x: geometry.size.width / 2, y: geometry.size.height / 2) // Center the circle within the GeometryReader
+                    .position(x: geometry.size.width / 2, y: geometry.size.height / 2)
                 
                 Circle()
                     .frame(width: size, height: size)
@@ -39,10 +37,10 @@ struct LightView: View {
                             )
                     )
                     .shadow(color: color.opacity(0.7), radius: size * 0.067)
-                    .position(x: geometry.size.width / 2, y: geometry.size.height / 2) // Center the circle within the GeometryReader
+                    .position(x: geometry.size.width / 2, y: geometry.size.height / 2)
             }
         }
-        .frame(width: size, height: size) // Set GeometryReader frame size to Circle frame size
+        .frame(width: size, height: size) 
     }
 }
 
