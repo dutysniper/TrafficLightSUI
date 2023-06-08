@@ -28,7 +28,6 @@ struct ContentView: View {
                     .opacity(greenLightOpacity)
             }
             .animation(.easeInOut(duration: 0.8), value: changeColor)
-            .padding()
             Spacer()
             Button(action: changeLight) {
                 Text(buttonName)
@@ -38,6 +37,7 @@ struct ContentView: View {
                     .cornerRadius(20)
             }
         }
+        .padding(EdgeInsets(top: 30, leading: 16, bottom: 16, trailing: 16))
     }
     
     private func changeLight() {
