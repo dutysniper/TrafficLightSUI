@@ -11,7 +11,7 @@ struct LightView: View {
     let color: Color
     
     var body: some View {
-        let size = 0.23 * UIScreen.main.bounds.height
+        let size = 0.21 * UIScreen.main.bounds.height
         
         GeometryReader { geometry in
             ZStack {

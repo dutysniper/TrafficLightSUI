@@ -18,29 +18,24 @@ struct ContentView: View {
         VStack {
             VStack(spacing: 15) {
                 LightView(color: .red)
-                    .opacity(currentColor == .red ? lightOn : lightOff)
+                    .opacity(currentColor == .red
+                             ? lightOn
+                             : lightOff)
                 LightView(color: .yellow)
-                    .opacity(currentColor == .yellow ? lightOn : lightOff)
+                    .opacity(currentColor == .yellow
+                             ? lightOn
+                             : lightOff)
                 LightView(color: .green)
-                    .opacity(currentColor == .green && buttonName == "NEXT" ? lightOn : lightOff)
+                    .opacity(currentColor == .green && buttonName == "NEXT"
+                             ? lightOn
+                             : lightOff)
             }
             .animation(.easeInOut(duration: 0.8), value: currentColor)
+            
             Spacer()
-            Button(action: changeLight) {
-                Text(buttonName)
-                    .foregroundColor(.white)
-                    .padding(
-                        EdgeInsets(
-                            top: 15,
-                            leading: 40,
-                            bottom: 15,
-                            trailing: 40
-                        )
-                    )
-                    .background(Color.blue)
-                    .cornerRadius(20)
-            }
-            .frame(width: 150)
+            
+            startButtonView(action: changeLight, text: buttonName)
+                .frame(width: 150)
         }
         .padding(EdgeInsets(top: 30, leading: 16, bottom: 16, trailing: 16))
     }
@@ -49,6 +44,7 @@ struct ContentView: View {
         if buttonName == "START" {
             buttonName = "NEXT"
         }
+        
         switch currentColor {
         case .red:
             currentColor = .yellow
@@ -66,7 +62,7 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
-extension ContentView {
+private extension ContentView {
     enum ChangeColor {
         case red
         case yellow

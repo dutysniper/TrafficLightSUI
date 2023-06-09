@@ -12,6 +12,7 @@
 		916F6F462A32145F000F5FAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 916F6F452A32145F000F5FAB /* Assets.xcassets */; };
 		916F6F492A32145F000F5FAB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 916F6F482A32145F000F5FAB /* Preview Assets.xcassets */; };
 		916F6F502A32155D000F5FAB /* LightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916F6F4F2A32155C000F5FAB /* LightView.swift */; };
+		918D446D2A3379A90075067B /* startButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918D446C2A3379A90075067B /* startButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		916F6F452A32145F000F5FAB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		916F6F482A32145F000F5FAB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		916F6F4F2A32155C000F5FAB /* LightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightView.swift; sourceTree = "<group>"; };
+		918D446C2A3379A90075067B /* startButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = startButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 			children = (
 				916F6F412A32145E000F5FAB /* TrafficLightSUIApp.swift */,
 				916F6F432A32145E000F5FAB /* ContentView.swift */,
+				918D446C2A3379A90075067B /* startButtonView.swift */,
 				916F6F4F2A32155C000F5FAB /* LightView.swift */,
 				916F6F452A32145F000F5FAB /* Assets.xcassets */,
 				916F6F472A32145F000F5FAB /* Preview Content */,
@@ -141,6 +144,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				916F6F442A32145E000F5FAB /* ContentView.swift in Sources */,
+				918D446D2A3379A90075067B /* startButtonView.swift in Sources */,
 				916F6F502A32155D000F5FAB /* LightView.swift in Sources */,
 				916F6F422A32145E000F5FAB /* TrafficLightSUIApp.swift in Sources */,
 			);
